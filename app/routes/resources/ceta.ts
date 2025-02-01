@@ -18,7 +18,7 @@ export async function action({ context }: Route.ActionArgs) {
   });
 
   const logToConsole = async (prompt: string) => {
-    const { text, steps } = await generateText({
+    const { text /*,  steps */ } = await generateText({
       model,
       prompt,
       system:
@@ -29,7 +29,7 @@ export async function action({ context }: Route.ActionArgs) {
       maxSteps: 2,
     });
 
-    console.dir(steps, { depth: null });
+    // console.dir(steps, { depth: null });
 
     return text;
   };
