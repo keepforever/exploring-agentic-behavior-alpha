@@ -37,6 +37,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       ) : (
         <p>Click the button to generate text</p>
       )}
+      <pre>{JSON.stringify(fetcher.data, null, 2) || "nothing to preview"}</pre>
     </div>
   );
 }
