@@ -16,10 +16,11 @@ export async function loader({ context }: Route.LoaderArgs) {
 export default function Home({ loaderData }: Route.ComponentProps) {
   const fetcher = useFetcher();
   const betaFetcher = useFetcher();
+  const cetaFetcher = useFetcher();
 
   console.log("\n", `fetcher.data = `, fetcher.data, "\n");
   return (
-    <div className="flex flex-col items-center gap-2 pt-8 justify-center">
+    <div className="flex flex-col items-center gap-10 pt-8 justify-center">
       Hello Home
       <fetcher.Form method="post" action="/resources/alpha">
         {/* submit button */}
@@ -48,6 +49,23 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           Call Tool
         </button>
       </betaFetcher.Form>
+      <cetaFetcher.Form method="post" action="/resources/ceta">
+        {/* submit button */}
+        <button
+          type="submit"
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+        >
+          Call Multi-Step Tool
+        </button>
+      </cetaFetcher.Form>
+      {/* Ceta Data */}
+      {cetaFetcher.state !== "idle" ? (
+        <p>Loading...</p>
+      ) : cetaFetcher?.data?.text ? (
+        cetaFetcher?.data?.text
+      ) : (
+        <p>Click the button to generate text</p>
+      )}
     </div>
   );
 }

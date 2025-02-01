@@ -13,27 +13,28 @@ export async function action({ context }: Route.ActionArgs) {
     }),
     execute: async ({ message }) => {
       console.log(message);
+      return `Logged message: ${message}`;
     },
   });
 
   const logToConsole = async (prompt: string) => {
-    const { steps } = await generateText({
+    const { text, steps } = await generateText({
       model,
       prompt,
       system:
-        `Your only role in life is to log ` +
-        `messages to the console. ` +
-        `Use the tool provided to log the ` +
-        `prompt to the console.`,
+        "Your only role in life is to log messages to the console. Use the tool provided to log the prompt to the console.",
       tools: {
         logToConsole: logToConsoleTool,
       },
+      maxSteps: 2,
     });
 
     console.dir(steps, { depth: null });
+
+    return text;
   };
 
-  await logToConsole("Hello world!");
+  const text = await logToConsole("Hello world!");
 
-  return Response.json({ ok: true });
+  return Response.json({ ok: true, text });
 }
