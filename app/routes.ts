@@ -8,9 +8,7 @@ import {
 
 export default [
   index("routes/home.tsx"),
-
   layout("routes/layout-one.tsx", [route("foo", "routes/foo.tsx")]),
-
   ...prefix("resources", [
     route("alpha", "./routes/resources/alpha.ts"),
     route("beta", "./routes/resources/beta.ts"),
