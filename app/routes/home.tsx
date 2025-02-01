@@ -15,6 +15,7 @@ export async function loader({ context }: Route.LoaderArgs) {
 
 export default function Home({ loaderData }: Route.ComponentProps) {
   const fetcher = useFetcher();
+  const betaFetcher = useFetcher();
 
   console.log("\n", `fetcher.data = `, fetcher.data, "\n");
   return (
@@ -38,6 +39,15 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <p>Click the button to generate text</p>
       )}
       <pre>{JSON.stringify(fetcher.data, null, 2) || "nothing to preview"}</pre>
+      <betaFetcher.Form method="post" action="/resources/beta">
+        {/* submit button */}
+        <button
+          type="submit"
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+        >
+          Call Tool
+        </button>
+      </betaFetcher.Form>
     </div>
   );
 }
