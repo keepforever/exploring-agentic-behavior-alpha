@@ -9,3 +9,5 @@
 /.vercel/
 
 .env
+
+/.vscode
