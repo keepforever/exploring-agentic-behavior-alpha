@@ -8,9 +8,11 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^1.1.9",
     "@react-router/express": "^7.1.5",
     "@react-router/node": "^7.1.5",
     "@vercel/node": "^3.2.25",
+    "ai": "^4.1.16",
     "express": "^4.21.1",
     "isbot": "^5.1.17",
     "react": "^19.0.0",
