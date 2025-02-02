@@ -31,7 +31,12 @@ import { NavLink, Outlet } from "react-router";
 
 const navigation = [
   { name: "Home", href: "/", icon: HomeIcon, current: true },
-  { name: "Foo", href: "/foo", icon: DocumentDuplicateIcon, current: false },
+  {
+    name: "Tool Calling Layout",
+    href: "/tool-calling-alpha",
+    icon: DocumentDuplicateIcon,
+    current: false,
+  },
   //   { name: "Alpha", href: "/resources/alpha", icon: FolderIcon, current: false },
   //   { name: "Beta", href: "/resources/beta", icon: CalendarIcon, current: false },
   //   { name: "Ceta", href: "/resources/ceta", icon: ChartPieIcon, current: false },

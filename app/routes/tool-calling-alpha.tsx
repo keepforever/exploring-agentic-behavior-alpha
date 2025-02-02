@@ -1,4 +1,4 @@
-import type { Route } from "./+types/foo";
+import type { Route } from "./+types/tool-calling-alpha";
 import { useFetcher } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
@@ -12,7 +12,7 @@ export async function loader({ context }: Route.LoaderArgs) {
   return { message: context.VALUE_FROM_VERCEL };
 }
 
-export default function Home({ loaderData }: Route.ComponentProps) {
+export default function ToolCallingAlpha({ loaderData }: Route.ComponentProps) {
   const fetcher = useFetcher();
   const isLoading = fetcher.state !== "idle";
   const data = fetcher.data;
@@ -20,7 +20,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
       <fetcher.Form method="post" action="/resources/ceta">
-        {/* submit button */}
         <button
           type="submit"
           className="w-full px-4 py-2 font-semibold bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
