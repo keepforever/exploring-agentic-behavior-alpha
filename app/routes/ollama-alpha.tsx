@@ -5,6 +5,7 @@ import type { Route } from "./+types/determine-activity";
 
 export async function action({ context, params, request }: Route.ActionArgs) {
   try {
+    // throw new Error("Testing error handling");
     const model = ollama("dolphin-mixtral:latest");
 
     const { text } = await generateText({
@@ -16,10 +17,7 @@ export async function action({ context, params, request }: Route.ActionArgs) {
 
     return { ok: true, text };
   } catch (error: any) {
-    return data(
-      { error: "Not Found", message: error.message || "Something went wrong" },
-      { status: 404 }
-    );
+    return { ok: false, error: error.message };
   }
 }
 
@@ -45,6 +43,15 @@ export default function KittenHaikuGenerator({
       <div className="flex items-center gap-2 flex-wrap font-bold text-gray-700">
         {actionData?.text}
       </div>
+
+      {/* Error Display  */}
+      {/* @ts-expect-error */}
+      {actionData?.error && (
+        <div className="p-4 bg-red-100 text-red-700 rounded-lg">
+          {/* @ts-expect-error */}
+          {actionData?.error}
+        </div>
+      )}
 
       <div className="mt-6 text-center">
         <pre className="mt-4 p-4 bg-gray-200 text-sm text-gray-900 rounded-lg font-mono whitespace-pre-wrap break-words">
