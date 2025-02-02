@@ -7,7 +7,7 @@ import {
 } from "@react-router/dev/routes";
 
 export default [
-  layout("routes/layout-two.tsx", [
+  layout("components/sidebar-layout.tsx", [
     index("routes/home.tsx"),
     layout("routes/layout-one.tsx", [route("foo", "routes/foo.tsx")]),
     ...prefix("resources", [
