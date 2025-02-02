@@ -28,6 +28,8 @@ export default function KittenHaikuGenerator({
   const navigation = useNavigation();
   const isGenerating = navigation.state !== "idle";
 
+  console.log("\n", `actionData = `, actionData, "\n");
+
   return (
     <div className="bg-gray-50 p-8 rounded-xl shadow-lg max-w-lg mx-auto space-y-8">
       <Form method="post">
