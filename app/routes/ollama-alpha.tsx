@@ -1,11 +1,10 @@
 import { generateText } from "ai";
 import { ollama } from "ollama-ai-provider";
-import { Form, data, useNavigate, useNavigation } from "react-router";
-import type { Route } from "./+types/determine-activity";
+import { Form, useNavigation } from "react-router";
+import type { Route } from "./+types/ollama-alpha";
 
 export async function action({ context, params, request }: Route.ActionArgs) {
   try {
-    // throw new Error("Testing error handling");
     const model = ollama("dolphin-mixtral:latest");
 
     const { text } = await generateText({
@@ -16,8 +15,8 @@ export async function action({ context, params, request }: Route.ActionArgs) {
     });
 
     return { ok: true, text };
-  } catch (error: any) {
-    return { ok: false, error: error.message };
+  } catch (error) {
+    return { ok: false, error: (error as Error)?.message };
   }
 }
 
@@ -47,11 +46,12 @@ export default function KittenHaikuGenerator({
       </div>
 
       {/* Error Display  */}
-      {/* @ts-expect-error */}
+
       {actionData?.error && (
         <div className="p-4 bg-red-100 text-red-700 rounded-lg">
-          {/* @ts-expect-error */}
           {actionData?.error}
+          <br />
+          OK: {actionData?.ok ? "true" : "false"}
         </div>
       )}
 
