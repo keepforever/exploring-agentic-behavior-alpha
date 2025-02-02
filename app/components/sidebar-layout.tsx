@@ -27,15 +27,14 @@ import {
   ChevronDownIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
-import { Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router";
 
 const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
+  { name: "Home", href: "/", icon: HomeIcon, current: true },
+  { name: "Foo", href: "/foo", icon: DocumentDuplicateIcon, current: false },
+  //   { name: "Alpha", href: "/resources/alpha", icon: FolderIcon, current: false },
+  //   { name: "Beta", href: "/resources/beta", icon: CalendarIcon, current: false },
+  //   { name: "Ceta", href: "/resources/ceta", icon: ChartPieIcon, current: false },
 ];
 const teams = [
   { id: 1, name: "Heroicons", href: "#", initial: "H", current: false },
@@ -94,26 +93,29 @@ export default function SidebarLayout() {
                     <ul role="list" className="-mx-2 space-y-1">
                       {navigation.map((item) => (
                         <li key={item.name}>
-                          <a
-                            href={item.href}
-                            className={cn(
-                              item.current
-                                ? "bg-gray-50 text-indigo-600"
-                                : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600",
-                              "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                          <NavLink to={item.href}>
+                            {({ isActive }) => (
+                              <span
+                                className={cn(
+                                  isActive
+                                    ? "bg-gray-50 text-indigo-600"
+                                    : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600",
+                                  "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                                )}
+                              >
+                                <item.icon
+                                  aria-hidden="true"
+                                  className={cn(
+                                    isActive
+                                      ? "text-indigo-600"
+                                      : "text-gray-400 group-hover:text-indigo-600",
+                                    "size-6 shrink-0"
+                                  )}
+                                />
+                                {item.name}
+                              </span>
                             )}
-                          >
-                            <item.icon
-                              aria-hidden="true"
-                              className={cn(
-                                item.current
-                                  ? "text-indigo-600"
-                                  : "text-gray-400 group-hover:text-indigo-600",
-                                "size-6 shrink-0"
-                              )}
-                            />
-                            {item.name}
-                          </a>
+                          </NavLink>
                         </li>
                       ))}
                     </ul>
@@ -125,42 +127,58 @@ export default function SidebarLayout() {
                     <ul role="list" className="-mx-2 mt-2 space-y-1">
                       {teams.map((team) => (
                         <li key={team.name}>
-                          <a
-                            href={team.href}
-                            className={cn(
-                              team.current
-                                ? "bg-gray-50 text-indigo-600"
-                                : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600",
-                              "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                          <NavLink to={team.href}>
+                            {({ isActive }) => (
+                              <span
+                                className={cn(
+                                  isActive
+                                    ? "bg-gray-50 text-indigo-600"
+                                    : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600",
+                                  "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                                )}
+                              >
+                                <span
+                                  className={cn(
+                                    isActive
+                                      ? "border-indigo-600 text-indigo-600"
+                                      : "border-gray-200 text-gray-400 group-hover:border-indigo-600 group-hover:text-indigo-600",
+                                    "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium"
+                                  )}
+                                >
+                                  {team.initial}
+                                </span>
+                                <span className="truncate">{team.name}</span>
+                              </span>
                             )}
-                          >
-                            <span
-                              className={cn(
-                                team.current
-                                  ? "border-indigo-600 text-indigo-600"
-                                  : "border-gray-200 text-gray-400 group-hover:border-indigo-600 group-hover:text-indigo-600",
-                                "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium"
-                              )}
-                            >
-                              {team.initial}
-                            </span>
-                            <span className="truncate">{team.name}</span>
-                          </a>
+                          </NavLink>
                         </li>
                       ))}
                     </ul>
                   </li>
                   <li className="mt-auto">
-                    <a
-                      href="#"
-                      className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
-                    >
-                      <Cog6ToothIcon
-                        aria-hidden="true"
-                        className="size-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
-                      />
-                      Settings
-                    </a>
+                    <NavLink to="/settings">
+                      {({ isActive }) => (
+                        <span
+                          className={cn(
+                            isActive
+                              ? "bg-gray-50 text-indigo-600"
+                              : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600",
+                            "group -mx-2 flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                          )}
+                        >
+                          <Cog6ToothIcon
+                            aria-hidden="true"
+                            className={cn(
+                              isActive
+                                ? "text-indigo-600"
+                                : "text-gray-400 group-hover:text-indigo-600",
+                              "size-6 shrink-0"
+                            )}
+                          />
+                          Settings
+                        </span>
+                      )}
+                    </NavLink>
                   </li>
                 </ul>
               </nav>
@@ -186,26 +204,29 @@ export default function SidebarLayout() {
                 <ul role="list" className="-mx-2 space-y-1">
                   {navigation.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className={cn(
-                          item.current
-                            ? "bg-gray-50 text-indigo-600"
-                            : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600",
-                          "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                      <NavLink to={item.href}>
+                        {({ isActive }) => (
+                          <span
+                            className={cn(
+                              isActive
+                                ? "bg-gray-50 text-indigo-600"
+                                : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600",
+                              "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                            )}
+                          >
+                            <item.icon
+                              aria-hidden="true"
+                              className={cn(
+                                isActive
+                                  ? "text-indigo-600"
+                                  : "text-gray-400 group-hover:text-indigo-600",
+                                "size-6 shrink-0"
+                              )}
+                            />
+                            {item.name}
+                          </span>
                         )}
-                      >
-                        <item.icon
-                          aria-hidden="true"
-                          className={cn(
-                            item.current
-                              ? "text-indigo-600"
-                              : "text-gray-400 group-hover:text-indigo-600",
-                            "size-6 shrink-0"
-                          )}
-                        />
-                        {item.name}
-                      </a>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
@@ -217,42 +238,58 @@ export default function SidebarLayout() {
                 <ul role="list" className="-mx-2 mt-2 space-y-1">
                   {teams.map((team) => (
                     <li key={team.name}>
-                      <a
-                        href={team.href}
-                        className={cn(
-                          team.current
-                            ? "bg-gray-50 text-indigo-600"
-                            : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600",
-                          "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                      <NavLink to={team.href}>
+                        {({ isActive }) => (
+                          <span
+                            className={cn(
+                              isActive
+                                ? "bg-gray-50 text-indigo-600"
+                                : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600",
+                              "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                            )}
+                          >
+                            <span
+                              className={cn(
+                                isActive
+                                  ? "border-indigo-600 text-indigo-600"
+                                  : "border-gray-200 text-gray-400 group-hover:border-indigo-600 group-hover:text-indigo-600",
+                                "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium"
+                              )}
+                            >
+                              {team.initial}
+                            </span>
+                            <span className="truncate">{team.name}</span>
+                          </span>
                         )}
-                      >
-                        <span
-                          className={cn(
-                            team.current
-                              ? "border-indigo-600 text-indigo-600"
-                              : "border-gray-200 text-gray-400 group-hover:border-indigo-600 group-hover:text-indigo-600",
-                            "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium"
-                          )}
-                        >
-                          {team.initial}
-                        </span>
-                        <span className="truncate">{team.name}</span>
-                      </a>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
               </li>
               <li className="mt-auto">
-                <a
-                  href="#"
-                  className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
-                >
-                  <Cog6ToothIcon
-                    aria-hidden="true"
-                    className="size-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
-                  />
-                  Settings
-                </a>
+                <NavLink to="/settings">
+                  {({ isActive }) => (
+                    <span
+                      className={cn(
+                        isActive
+                          ? "bg-gray-50 text-indigo-600"
+                          : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600",
+                        "group -mx-2 flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                      )}
+                    >
+                      <Cog6ToothIcon
+                        aria-hidden="true"
+                        className={cn(
+                          isActive
+                            ? "text-indigo-600"
+                            : "text-gray-400 group-hover:text-indigo-600",
+                          "size-6 shrink-0"
+                        )}
+                      />
+                      Settings
+                    </span>
+                  )}
+                </NavLink>
               </li>
             </ul>
           </nav>
