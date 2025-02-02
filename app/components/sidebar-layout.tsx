@@ -1,6 +1,5 @@
 import { cn } from "../utils/misc";
 
-import { useState } from "react";
 import {
   Dialog,
   DialogBackdrop,
@@ -12,21 +11,18 @@ import {
   TransitionChild,
 } from "@headlessui/react";
 import {
-  Bars3Icon,
-  BellIcon,
-  CalendarIcon,
-  ChartPieIcon,
-  Cog6ToothIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
-  HomeIcon,
-  UsersIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
-import {
   ChevronDownIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
+import {
+  Bars3Icon,
+  BellIcon,
+  Cog6ToothIcon,
+  DocumentDuplicateIcon,
+  HomeIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import { useState } from "react";
 import { NavLink, Outlet } from "react-router";
 
 const navigation = [
