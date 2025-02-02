@@ -1,23 +1,14 @@
 import { generateText, tool } from "ai";
-import { z } from "zod";
 import type { Route } from "./+types/beta";
 import { openai } from "@ai-sdk/openai";
+import { logToConsoleTool } from "~/utils/tools/log-to-console";
 
-export async function action({ context }: Route.ActionArgs) {
+export async function action({ context, params, request }: Route.ActionArgs) {
   const model = openai("gpt-4-turbo");
 
-  const logToConsoleTool = tool({
-    description: "Log a message to the console",
-    parameters: z.object({
-      message: z.string().describe("The message to log to the console"),
-    }),
-    execute: async ({ message }) => {
-      console.log(message);
-    },
-  });
-
   const logToConsole = async (prompt: string) => {
-    const { steps } = await generateText({
+    // const { steps } = await generateText({
+    await generateText({
       model,
       prompt,
       system:
@@ -30,7 +21,7 @@ export async function action({ context }: Route.ActionArgs) {
       },
     });
 
-    console.dir(steps, { depth: null });
+    // console.dir(steps, { depth: null });
   };
 
   await logToConsole("Hello world!");
