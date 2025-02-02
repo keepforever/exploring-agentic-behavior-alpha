@@ -38,6 +38,12 @@ const navigation = [
     href: "/determine-activity",
     icon: DocumentDuplicateIcon,
   },
+  {
+    name: "Ollama Alpha",
+    href: "/ollama-alpha",
+    icon: DocumentDuplicateIcon,
+  },
+
   //   { name: "Alpha", href: "/resources/alpha", icon: FolderIcon, current: false },
   //   { name: "Beta", href: "/resources/beta", icon: CalendarIcon, current: false },
   //   { name: "Ceta", href: "/resources/ceta", icon: ChartPieIcon, current: false },

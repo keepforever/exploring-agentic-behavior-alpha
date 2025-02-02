@@ -10,6 +10,7 @@ export default [
   layout("components/sidebar-layout.tsx", [
     index("routes/home.tsx"),
     route("determine-activity", "routes/determine-activity.tsx"),
+    route("ollama-alpha", "routes/ollama-alpha.tsx"),
     // nested layout
     layout("components/foo-layout.tsx", [
       route("tool-calling-alpha", "routes/tool-calling-alpha.tsx"),
