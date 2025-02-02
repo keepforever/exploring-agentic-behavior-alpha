@@ -9,7 +9,8 @@ import {
 export default [
   layout("components/sidebar-layout.tsx", [
     index("routes/home.tsx"),
-    layout("routes/layout-one.tsx", [route("foo", "routes/foo.tsx")]),
+    // nested layout
+    layout("components/foo-layout.tsx", [route("foo", "routes/foo.tsx")]),
     ...prefix("resources", [
       route("alpha", "./routes/resources/alpha.ts"),
       route("beta", "./routes/resources/beta.ts"),

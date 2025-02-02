@@ -18,23 +18,27 @@ export default function Home({ loaderData }: Route.ComponentProps) {
   const data = fetcher.data;
 
   return (
-    <div className="container mx-auto max-w-2xl">
+    <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
       <fetcher.Form method="post" action="/resources/ceta">
         {/* submit button */}
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+          className="w-full px-4 py-2 font-semibold bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
           Call Multi-Step Tool
         </button>
       </fetcher.Form>
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : data?.text ? (
-        data?.text
-      ) : (
-        <p>Click the button to call the multi-step tool</p>
-      )}
+      <div className="mt-4 text-center">
+        {isLoading ? (
+          <p className="text-gray-600">Loading...</p>
+        ) : data?.text ? (
+          <p className="text-gray-800">{data.text}</p>
+        ) : (
+          <p className="text-gray-600">
+            Click the button to call the multi-step tool
+          </p>
+        )}
+      </div>
     </div>
   );
 }
