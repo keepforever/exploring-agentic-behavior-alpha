@@ -31,7 +31,12 @@ const navigation = [
     name: "Tool Calling Layout",
     href: "/tool-calling-alpha",
     icon: DocumentDuplicateIcon,
-    current: false,
+  },
+
+  {
+    name: "Determine Activity",
+    href: "/determine-activity",
+    icon: DocumentDuplicateIcon,
   },
   //   { name: "Alpha", href: "/resources/alpha", icon: FolderIcon, current: false },
   //   { name: "Beta", href: "/resources/beta", icon: CalendarIcon, current: false },

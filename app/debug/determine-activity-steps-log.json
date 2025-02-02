@@ -1,0 +1,269 @@
+[
+  {
+    "stepType": "initial",
+    "text": "",
+    "reasoning": null,
+    "toolCalls": [
+      {
+        "type": "tool-call",
+        "toolCallId": "call_d8OpPvOsYJuW3o8AScwpLaxf",
+        "toolName": "brianPreferencesTool",
+        "args": {}
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "call_pTxZoyTxb8UVlmJ0dZxQJS7d",
+        "toolName": "stevePreferencesTool",
+        "args": {}
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "call_6AIH3qNWxlDQSPkQ4nd5Ld2I",
+        "toolName": "sallyPreferencesTool",
+        "args": {}
+      }
+    ],
+    "toolResults": [
+      {
+        "type": "tool-result",
+        "toolCallId": "call_d8OpPvOsYJuW3o8AScwpLaxf",
+        "toolName": "brianPreferencesTool",
+        "args": {},
+        "result": "Brian enjoys hiking, movies, and indulging in photography."
+      },
+      {
+        "type": "tool-result",
+        "toolCallId": "call_pTxZoyTxb8UVlmJ0dZxQJS7d",
+        "toolName": "stevePreferencesTool",
+        "args": {},
+        "result": "Steve loves hiking and movies, and he often experiments with cooking."
+      },
+      {
+        "type": "tool-result",
+        "toolCallId": "call_6AIH3qNWxlDQSPkQ4nd5Ld2I",
+        "toolName": "sallyPreferencesTool",
+        "args": {},
+        "result": "Sally is fond of movies and hiking, and she also enjoys reading."
+      }
+    ],
+    "finishReason": "tool-calls",
+    "usage": {
+      "promptTokens": 130,
+      "completionTokens": 56,
+      "totalTokens": 186
+    },
+    "warnings": [],
+    "logprobs": null,
+    "request": {
+      "body": "{\"model\":\"gpt-4-turbo\",\"temperature\":0,\"messages\":[{\"role\":\"system\",\"content\":\"Your only role in life is to suggest an activity that Sally, Brian, and Steve might enjoy to do together. Use the tools provided to determine the preferences of Brian, Steve, and Sally.\"},{\"role\":\"user\",\"content\":\"Please suggest an activity that Sally, Brian, and Steve might enjoy to do together.\"}],\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"brianPreferencesTool\",\"description\":\"Get activity preferences for Brian\",\"parameters\":{\"type\":\"object\",\"properties\":{},\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"stevePreferencesTool\",\"description\":\"Get activity preferences for Steve\",\"parameters\":{\"type\":\"object\",\"properties\":{},\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"sallyPreferencesTool\",\"description\":\"Get activity preferences for Sally\",\"parameters\":{\"type\":\"object\",\"properties\":{},\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}}],\"tool_choice\":\"auto\"}"
+    },
+    "response": {
+      "id": "chatcmpl-AwZMx9hkYQByZ1ndOjl1pO4bZF8Vv",
+      "timestamp": "2025-02-02T18:52:27.000Z",
+      "modelId": "gpt-4-turbo-2024-04-09",
+      "headers": {
+        "access-control-expose-headers": "X-Request-ID",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cf-cache-status": "DYNAMIC",
+        "cf-ray": "90bc60dddd60c9ad-IAD",
+        "connection": "keep-alive",
+        "content-encoding": "br",
+        "content-type": "application/json",
+        "date": "Sun, 02 Feb 2025 18:52:28 GMT",
+        "openai-organization": "user-hche4jhwno6lhpl4p1cmmnce",
+        "openai-processing-ms": "1517",
+        "openai-version": "2020-10-01",
+        "server": "cloudflare",
+        "set-cookie": "_cfuvid=eHBzDYuLYphbRTkmC1U1bc1Wj0yvXC4SsrVqTOBUxGE-1738522348736-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "transfer-encoding": "chunked",
+        "x-content-type-options": "nosniff",
+        "x-ratelimit-limit-requests": "500",
+        "x-ratelimit-limit-tokens": "450000",
+        "x-ratelimit-remaining-requests": "499",
+        "x-ratelimit-remaining-tokens": "449914",
+        "x-ratelimit-reset-requests": "120ms",
+        "x-ratelimit-reset-tokens": "11ms",
+        "x-request-id": "req_cbfb1c88ed3cf3f544287cbab41a78f7"
+      },
+      "messages": [
+        {
+          "role": "assistant",
+          "content": [
+            { "type": "text", "text": "" },
+            {
+              "type": "tool-call",
+              "toolCallId": "call_d8OpPvOsYJuW3o8AScwpLaxf",
+              "toolName": "brianPreferencesTool",
+              "args": {}
+            },
+            {
+              "type": "tool-call",
+              "toolCallId": "call_pTxZoyTxb8UVlmJ0dZxQJS7d",
+              "toolName": "stevePreferencesTool",
+              "args": {}
+            },
+            {
+              "type": "tool-call",
+              "toolCallId": "call_6AIH3qNWxlDQSPkQ4nd5Ld2I",
+              "toolName": "sallyPreferencesTool",
+              "args": {}
+            }
+          ],
+          "id": "msg-RPbuAuyYWLjRHmsyFtBCtGDp"
+        },
+        {
+          "role": "tool",
+          "id": "msg-PzajNBxI3WRUOr4II9CCb4qj",
+          "content": [
+            {
+              "type": "tool-result",
+              "toolCallId": "call_d8OpPvOsYJuW3o8AScwpLaxf",
+              "toolName": "brianPreferencesTool",
+              "result": "Brian enjoys hiking, movies, and indulging in photography."
+            },
+            {
+              "type": "tool-result",
+              "toolCallId": "call_pTxZoyTxb8UVlmJ0dZxQJS7d",
+              "toolName": "stevePreferencesTool",
+              "result": "Steve loves hiking and movies, and he often experiments with cooking."
+            },
+            {
+              "type": "tool-result",
+              "toolCallId": "call_6AIH3qNWxlDQSPkQ4nd5Ld2I",
+              "toolName": "sallyPreferencesTool",
+              "result": "Sally is fond of movies and hiking, and she also enjoys reading."
+            }
+          ]
+        }
+      ]
+    },
+    "experimental_providerMetadata": {
+      "openai": {
+        "reasoningTokens": 0,
+        "acceptedPredictionTokens": 0,
+        "rejectedPredictionTokens": 0,
+        "cachedPromptTokens": 0
+      }
+    },
+    "isContinued": false
+  },
+  {
+    "stepType": "tool-result",
+    "text": "Sally, Brian, and Steve might enjoy going hiking or watching a movie together, as these activities are common interests among all three of them.",
+    "reasoning": null,
+    "toolCalls": [],
+    "toolResults": [],
+    "finishReason": "stop",
+    "usage": {
+      "promptTokens": 238,
+      "completionTokens": 31,
+      "totalTokens": 269
+    },
+    "warnings": [],
+    "logprobs": null,
+    "request": {
+      "body": "{\"model\":\"gpt-4-turbo\",\"temperature\":0,\"messages\":[{\"role\":\"system\",\"content\":\"Your only role in life is to suggest an activity that Sally, Brian, and Steve might enjoy to do together. Use the tools provided to determine the preferences of Brian, Steve, and Sally.\"},{\"role\":\"user\",\"content\":\"Please suggest an activity that Sally, Brian, and Steve might enjoy to do together.\"},{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_d8OpPvOsYJuW3o8AScwpLaxf\",\"type\":\"function\",\"function\":{\"name\":\"brianPreferencesTool\",\"arguments\":\"{}\"}},{\"id\":\"call_pTxZoyTxb8UVlmJ0dZxQJS7d\",\"type\":\"function\",\"function\":{\"name\":\"stevePreferencesTool\",\"arguments\":\"{}\"}},{\"id\":\"call_6AIH3qNWxlDQSPkQ4nd5Ld2I\",\"type\":\"function\",\"function\":{\"name\":\"sallyPreferencesTool\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"call_d8OpPvOsYJuW3o8AScwpLaxf\",\"content\":\"\\\"Brian enjoys hiking, movies, and indulging in photography.\\\"\"},{\"role\":\"tool\",\"tool_call_id\":\"call_pTxZoyTxb8UVlmJ0dZxQJS7d\",\"content\":\"\\\"Steve loves hiking and movies, and he often experiments with cooking.\\\"\"},{\"role\":\"tool\",\"tool_call_id\":\"call_6AIH3qNWxlDQSPkQ4nd5Ld2I\",\"content\":\"\\\"Sally is fond of movies and hiking, and she also enjoys reading.\\\"\"}]}"
+    },
+    "response": {
+      "id": "chatcmpl-AwZMy5wOvdvSqnL2Scw80NAO9IErl",
+      "timestamp": "2025-02-02T18:52:28.000Z",
+      "modelId": "gpt-4-turbo-2024-04-09",
+      "headers": {
+        "access-control-expose-headers": "X-Request-ID",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cf-cache-status": "DYNAMIC",
+        "cf-ray": "90bc60e86b5fc9ad-IAD",
+        "connection": "keep-alive",
+        "content-encoding": "br",
+        "content-type": "application/json",
+        "date": "Sun, 02 Feb 2025 18:52:29 GMT",
+        "openai-organization": "user-hche4jhwno6lhpl4p1cmmnce",
+        "openai-processing-ms": "835",
+        "openai-version": "2020-10-01",
+        "server": "cloudflare",
+        "set-cookie": "_cfuvid=3buZmBHyXKsOckmhrgjTO8bXt4SiOkCZvAYEJLotDEE-1738522349732-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "transfer-encoding": "chunked",
+        "x-content-type-options": "nosniff",
+        "x-ratelimit-limit-requests": "500",
+        "x-ratelimit-limit-tokens": "450000",
+        "x-ratelimit-remaining-requests": "499",
+        "x-ratelimit-remaining-tokens": "449860",
+        "x-ratelimit-reset-requests": "120ms",
+        "x-ratelimit-reset-tokens": "18ms",
+        "x-request-id": "req_c200c4c3b90fdff18784067535b9fa81"
+      },
+      "messages": [
+        {
+          "role": "assistant",
+          "content": [
+            { "type": "text", "text": "" },
+            {
+              "type": "tool-call",
+              "toolCallId": "call_d8OpPvOsYJuW3o8AScwpLaxf",
+              "toolName": "brianPreferencesTool",
+              "args": {}
+            },
+            {
+              "type": "tool-call",
+              "toolCallId": "call_pTxZoyTxb8UVlmJ0dZxQJS7d",
+              "toolName": "stevePreferencesTool",
+              "args": {}
+            },
+            {
+              "type": "tool-call",
+              "toolCallId": "call_6AIH3qNWxlDQSPkQ4nd5Ld2I",
+              "toolName": "sallyPreferencesTool",
+              "args": {}
+            }
+          ],
+          "id": "msg-RPbuAuyYWLjRHmsyFtBCtGDp"
+        },
+        {
+          "role": "tool",
+          "id": "msg-PzajNBxI3WRUOr4II9CCb4qj",
+          "content": [
+            {
+              "type": "tool-result",
+              "toolCallId": "call_d8OpPvOsYJuW3o8AScwpLaxf",
+              "toolName": "brianPreferencesTool",
+              "result": "Brian enjoys hiking, movies, and indulging in photography."
+            },
+            {
+              "type": "tool-result",
+              "toolCallId": "call_pTxZoyTxb8UVlmJ0dZxQJS7d",
+              "toolName": "stevePreferencesTool",
+              "result": "Steve loves hiking and movies, and he often experiments with cooking."
+            },
+            {
+              "type": "tool-result",
+              "toolCallId": "call_6AIH3qNWxlDQSPkQ4nd5Ld2I",
+              "toolName": "sallyPreferencesTool",
+              "result": "Sally is fond of movies and hiking, and she also enjoys reading."
+            }
+          ]
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Sally, Brian, and Steve might enjoy going hiking or watching a movie together, as these activities are common interests among all three of them."
+            }
+          ],
+          "id": "msg-LkKUZJhJjimCH9d4glTNflOd"
+        }
+      ]
+    },
+    "experimental_providerMetadata": {
+      "openai": {
+        "reasoningTokens": 0,
+        "acceptedPredictionTokens": 0,
+        "rejectedPredictionTokens": 0,
+        "cachedPromptTokens": 0
+      }
+    },
+    "isContinued": false
+  }
+]
