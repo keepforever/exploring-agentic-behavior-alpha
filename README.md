@@ -1,3 +1,7 @@
+## Project Description
+
+This project is a sandbox for learning how to leverage Vercel's ai lib to execute agentic behavior. It serves as a playground to experiment with asynchronous tool integration in a full-stack React environment.
+
 # Welcome to React Router!
 
 A modern, production-ready template for building full-stack React applications using React Router.
