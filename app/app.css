@@ -16,8 +16,8 @@
   }
 }
 
-@layer components {
+@layer theme {
   .monkey {
-    --color-brian-100: var(--color-slate-200);
+    --color-brian-100: var(--color-purple-200);
   }
 }

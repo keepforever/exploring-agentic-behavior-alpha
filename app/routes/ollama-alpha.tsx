@@ -44,7 +44,7 @@ export default function KittenHaikuGenerator({
   }, [actionData?.ok, actionData?.text]);
 
   return (
-    <div className="bg-gray-50 p-8 rounded-xl shadow-lg max-w-lg mx-auto space-y-8">
+    <div className="p-8 rounded-xl shadow-lg max-w-lg mx-auto space-y-8 bg-brian-100">
       <Form ref={formRef} method="post" className="space-y-4">
         <div>
           <label 
@@ -72,7 +72,7 @@ export default function KittenHaikuGenerator({
 
       {/* Response Display */}
       <div className="flex items-center gap-2 flex-wrap font-bold text-gray-700">
-        {actionData?.text}
+        {actionData?.text ?? "No response yet"}
       </div>
 
       {/* Error Display */}
@@ -84,12 +84,7 @@ export default function KittenHaikuGenerator({
         </div>
       )}
 
-      <div className="mt-6 text-center">
-        <pre className="mt-4 p-4 bg-gray-200 text-sm text-gray-900 rounded-lg font-mono whitespace-pre-wrap break-words">
-          {JSON.stringify(actionData, null, 2) ||
-            "Generated text will appear here"}
-        </pre>
-      </div>
+      
     </div>
   );
 }
