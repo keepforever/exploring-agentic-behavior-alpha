@@ -20,11 +20,11 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
   console.log("\n", `fetcher.data = `, fetcher.data, "\n");
   return (
-    <div className="container mx-auto p-8">
+    <div className="container mx-auto p-8 bg-brian-100">
       <h1 className="text-3xl font-bold text-center mb-6">Home</h1>
       <div className="grid grid-cols-1 gap-8">
         <section className="p-6 border rounded-lg shadow">
-          <h2 className="text-xl font-semibold mb-4">Generate Text</h2>
+          <h2 className="text-xl font-semibold mb-4 ">Generate Text</h2>
           <fetcher.Form
             method="post"
             action="/resources/alpha"
